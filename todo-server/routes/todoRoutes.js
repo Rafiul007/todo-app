@@ -56,13 +56,17 @@ router.delete("/todos/:id", async (req, res) => {
     return res.status(404).send("Invalid ID");
   }
   try {
-    const todo = await Todo.findByIdAndRemove(id);
+    const todo = await Todo.findOneAndDelete({ _id: id });
+    if (!todo) {
+      return res.status(404).send("Todo not found");
+    }
     res.json(todo);
   } catch (err) {
     console.error(err.message);
     res.status(400).json({ msg: "Error deleting todo" });
   }
 });
+
 //update a todo by id
 router.patch("/todos/:id", async (req, res) => {
   if (req.body.title != null) {
