@@ -1,0 +1,25 @@
+/* src/components/AddTodoForm.css */
+
+.add-todo-form-container {
+    margin-top: 20px;
+  }
+  
+  .add-todo-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .add-todo-form input,
+  .add-todo-form textarea {
+    margin-bottom: 10px;
+    padding: 5px;
+  }
+  
+  .add-button {
+    background-color: #33cc33;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
